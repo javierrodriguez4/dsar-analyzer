@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  dsar-analyzer:
+    # Usamos una imagen ligera de Nginx como servidor web
+    image: nginx:alpine
+    
+    # El nombre del contenedor para fácil identificación
+    container_name: dsar-analyzer-app
+    
+    # Mapeamos el puerto 8080 de tu máquina al puerto 80 del contenedor
+    ports:
+      - "8080:80"
+      
+    # Montamos todo el directorio actual (.) en el directorio donde Nginx sirve los archivos
+    # Esto permite que los cambios en tu código se reflejen en tiempo real.
+    volumes:
+      - ./:/usr/share/nginx/html
+      
+    # Nos aseguramos de que el contenedor se reinicie automáticamente si se detiene
+    restart: unless-stopped 
