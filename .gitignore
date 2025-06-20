@@ -1,0 +1,13 @@
+# Log files from analysis
+*.log
+logs/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo 
